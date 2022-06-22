@@ -1,0 +1,19 @@
+include ./components/product/product
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title Покорми кота
+
+  body
+    .wrapper
+      header.header
+        h1.title Ты сегодня покормил кота?
+      main.main
+        +product({taste: 'foie-gras', weight: 0.5})
+        +product({taste: 'fish', weight: 2, selected: true})
+        +product({taste: 'chicken', weight: 5, disabled: true})
+

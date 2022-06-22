@@ -1,0 +1,25 @@
+@use "../fonts/fonts";
+
+* {
+  line-height: 116%;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

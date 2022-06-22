@@ -1,0 +1,27 @@
+mixin product(params)
+  - let {taste = 'chicken', weight = 0.5, selected = false, disabled = false} = params
+  - let classes = []
+
+  - if (selected) classes.push('product--selected')
+  - if (disabled) classes.push('product--disabled')
+
+  article.product(class=classes, data-taste=taste, data-weight=weight)
+    .product__card-wrapper
+      .product__card
+        header.product__header
+          p.product__heading Сказочное заморское яство
+          h1.product__title!= 'Нямушка'
+          p.product__taste
+          ul.product__details
+            li.product__detail
+            li.product__detail
+            if weight >=5
+              li.product__detail заказчик доволен
+        p.product__weight
+          span.product__weight-value
+          span.product__weight-units кг
+    .product__footer
+      p.product__slogan
+        span.product__slogan-text-!= 'Чего сидишь? Порадуй котэ, '
+        span.product__select-btn!= '<span class="product__border">купи</span>.'
+      p.product__description
