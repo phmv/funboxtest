@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --open --config ./configs/webpack/webpack.dev.conf.js",
-    "build": "webpack --config ./configs/webpack/webpack.prod.conf.js"
+    "build": "webpack --config ./configs/webpack/webpack.prod.conf.js",
+    "deploy": "gh-pages -d dist"
   },
   "browserslist": [
     "defaults"
@@ -25,6 +26,7 @@
     "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
     "postcss": "^8.4.14",
