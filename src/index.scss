@@ -1,25 +1,32 @@
 @use "./assets/styles/global";
 
+html {
+  height: 100%;
+}
+
 body {
-  background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.5) 0%,
-      rgba(0, 0, 0, 5e-5) 49.88%,
-      rgba(0, 0, 0, 0.5) 100%
-    ),
-    url("./assets/img/background-pattern.png");
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-top: 36px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 5e-5) 49.88%, rgba(0, 0, 0, 0.5) 100%), url("./assets/img/background-pattern.png");
 }
 
 .wrapper {
-  margin: 36px auto;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
 
 .title {
   font-family: "Exo 2", sans-serif;
   font-size: 36px;
   font-weight: 100;
-  font-style: normal;
   line-height: 43px;
+  font-style: normal;
   margin: 0;
   color: #ffffff;
   text-align: center;
@@ -27,7 +34,46 @@ body {
 
 .main {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 25px 0;
+  justify-content: space-between;
+  width: 100%;
+  margin: 25px auto;
+
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    width: 12px;
+  }
+
+  &__item {
+    flex-basis: 320px;
+    margin: 0 12px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    flex-wrap: wrap;
+    &__item:last-child {
+      order: 1;
+      margin: 0 auto;
+      margin-top: 25px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__item {
+      display: flex;
+      justify-content: center;
+      flex-basis: auto;
+      width: 100%;
+
+      &:not(:first-child) {
+        margin-top: 25px;
+      }
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  flex: 0 0 36px;
 }

@@ -1,11 +1,8 @@
 @use "../fonts/fonts";
 
 * {
+  box-sizing: border-box;
   line-height: 116%;
-}
-
-html {
-  height: 100%;
 }
 
 body {
